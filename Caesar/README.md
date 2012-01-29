@@ -9,8 +9,9 @@ Write a program that takes as input a single argument on the command line. This 
 Your submission will be tested against an input file that contains ASCII characters. The input file starts at the very first line with a N-digits positive or negative integer number that is your cipher, followed by a new-line character. The second line starts with the payload of the encrypted text until the end of file.
 Note that only words (alphanumeric sequences) are encrypted and that every other character (i.e. punctuation) must not be processed by your algorithm and must also be copied ‘as is’ to the standard output.
 ####Example input file:
-87
-Qxuuhfxxm bynjtrwp: juu hxda lxwcnwc jan knuxwp cx db! Yjbb cqrb kruu xa uron fruu nwm!
+
+`87`
+`Qxuuhfxxm bynjtrwp: juu hxda lxwcnwc jan knuxwp cx db! Yjbb cqrb kruu xa uron fruu nwm!`
 ###Output Specifications
 
 The expected output must be the decrypted message. The starting number must not be included in the output.
