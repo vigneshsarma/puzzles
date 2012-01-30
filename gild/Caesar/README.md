@@ -11,6 +11,7 @@ Note that only words (alphanumeric sequences) are encrypted and that every other
 ####Example input file:
 
 `87`
+
 `Qxuuhfxxm bynjtrwp: juu hxda lxwcnwc jan knuxwp cx db! Yjbb cqrb kruu xa uron fruu nwm!`
 ###Output Specifications
 
