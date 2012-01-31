@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1304865300 source:d:\dropbox\dev\codejam\pblm3\pblm4\d.cpp
+	<fstream>
+	<iostream>
+
