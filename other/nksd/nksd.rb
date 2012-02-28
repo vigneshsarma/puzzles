@@ -34,12 +34,23 @@ class Nksd
     elsif key==" "
       ""
     else
-      @map[key]
+      if key[0].chr == "9" or key[0].chr =="7"
+        limit = (key.length-1)%4
+      else
+        limit=(key.length-1)%3
+      end
+      @map[key[0..limit]]
     end
   end
 
 end
 
 if __FILE__==$0
-  Nksd.new
+  print "Enter the string to decode:"
+  txt=gets[0..-2]
+#  print txt
+  nksd = Nksd.new txt
+  print "The message you typed is: "
+  puts nksd.decode
+
 end

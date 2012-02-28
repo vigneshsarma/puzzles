@@ -9,4 +9,12 @@ describe Nksd do
     nksd = Nksd.new cipher1
     nksd.decode.should eq("ab")
   end
+
+  it "decoder the real message from" do
+    nksd = Nksd.new "" 
+    nksd.lookUp("2").should eq("a")
+    nksd.lookUp("2222").should eq("a")
+    nksd.lookUp("999999").should eq("x")
+  end
+
 end
