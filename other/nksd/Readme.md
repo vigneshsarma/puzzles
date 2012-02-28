@@ -25,3 +25,4 @@ Input: ``` 2 2202223033 333```
 Output:``` ab cd ef```
 
 To keep things simple you do not need to consider Capitals and Numbers.
+Taken from [Multunus Careers Page](http://www.multunus.com/careers/how-to-apply/application-form-for-developers/)
