@@ -2,6 +2,7 @@
 #include<iostream>
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 using namespace std;
 
@@ -16,56 +17,62 @@ public:
     }
   }
   void addToMap();
-  void printCurrMap();
+  void mapAndPrint(char fileName[20]);
 }obj;
 
 void Googlerese::addToMap() {
-  ifstream goog_map("map.txt");
- 
-  for (int i = 'a'; i <= 'z'; ++i)    
+  char goog_map[]={'y','h','e','s','o','c','v','x','d','u','i','g','l','b','k','r','z','t','n','w','j','p','f','m','a','q','\0'};
+
+  cout << goog_map<<endl;
+  printf("%d",' ');
+  for (int i = 'a', j = 0; i <= 'z'; i++,j++)    
     {        
-      goog_map>>googMap[i];
-      printf("\n#%c: %c",i,googMap[i]);      
+      googMap[i]=goog_map[j];
+      printf("#%c: %c\n",i,googMap[i]);      
     }
-  googMap[' ']=' ';
-  goog_map.close();
+  cout<<"sfd";
+  googMap[32]=32;
 }
 
-void Googlerese::printCurrMap() {
-  ofstream goog_map("map.txt");
- 
-  for (int i = 'a'; i <= 'z'; ++i)    
-    {
-      
-      printf("\n#%c: %c",i,googMap[i]);
-      goog_map<<googMap[i];
-      
-    }
-  goog_map.close();
+void Googlerese::mapAndPrint(char fileName[20]) {
+  char inpFile[20],outFile[20],tmp[120];
+  char goog_map[]={'y','h','e','s','o','c','v','x','d','u','i','g','l','b','k','r','z','t','n','w','j','p','f','m','a','q','\0'};
+  int i=0,N,j;
+  cout<<"tata ";
+  strcpy(inpFile,fileName);
+  strcat(inpFile,".in");
+  strcpy(outFile,fileName);
+  strcat(outFile,".out");
+  ifstream fin(inpFile);
+  ofstream fout(outFile);
+
+  fin>>N;
+  fin.ignore();
+  while(i<N) {
+    i++;j=0;
+    fout<<"Case #"<<i<<": ";
+    
+    fin.getline(tmp,120);
+    do
+      {
+	if(tmp[j] == ' '){
+	  fout<< ' ';
+	}else{
+	  fout<<goog_map[tmp[j]-'a'];
+	  cout<<goog_map[tmp[j]-'a'];
+	}
+	j++;
+      } while (tmp[j]!='\0');
+    fout<<endl;
+  }
+  fin.close();
+  fout.close();
 }
 
 int main(int argc, char *argv[]){
   int opt;
-
-  do {
-    cout<<"Menu:\nsample ->1\ninput -3\nexit ->0\n>>>";
-    cin>>opt;
-    switch (opt) {
-    case 1: {
-      obj.addToMap();
-      break;
-    }
-    case 3: {
-      
-      break;
-    }
-    case 0:
-      exit(0);
-    default: {
-      cout<<"invalid option";
-    }
-    }
-  } while (opt!=0);
+  //obj.addToMap();
+  obj.mapAndPrint(argv[1]);
 
   return 0;
 }
